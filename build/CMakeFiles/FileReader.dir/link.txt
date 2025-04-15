@@ -1,0 +1,2 @@
+/usr/bin/arm-linux-gnueabihf-ar qc libFileReader.a  CMakeFiles/FileReader.dir/src/FileReader/FileReader.cpp.o
+/usr/bin/arm-linux-gnueabihf-ranlib libFileReader.a

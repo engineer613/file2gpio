@@ -1,0 +1,1 @@
+/usr/bin/arm-linux-gnueabihf-g++      CMakeFiles/File2GPIO.dir/src/main.cpp.o  -o File2GPIO libBBBGpioPin.a libFileReader.a libGpioWriter.a libBBBGpioPin.a -lpthread 

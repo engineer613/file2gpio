@@ -1,0 +1,2 @@
+/usr/bin/arm-linux-gnueabihf-ar qc libGpioWriter.a  CMakeFiles/GpioWriter.dir/src/GpioWriter/GpioWriter.cpp.o
+/usr/bin/arm-linux-gnueabihf-ranlib libGpioWriter.a

@@ -1,0 +1,54 @@
+{
+  "GPIOPins": {
+  "Pin1" :
+  {
+   "Num": "1",
+   "AbsNum": "66",
+   "HdrNum": "P8_07",
+   "Mode": "out"
+  },
+  "Pin2" :
+  {
+    "Num": "2",
+    "AbsNum": "67",
+    "HdrNum": "P8_08",
+    "Mode": "out"
+  },
+    "Pin3" :{
+"Num": "3",
+"AbsNum": "68",
+"HdrNum": "P8_10",
+"Mode": "out"
+},
+    "Pin4" :{
+"Num": "4",
+"AbsNum": "69",
+"HdrNum": "P8_09",
+"Mode": "out"
+},
+    "Pin5" :{
+"Num": "5",
+"AbsNum": "47",
+"HdrNum": "P8_15",
+"Mode": "out"
+},
+    "Pin6" :{
+"Num": "6",
+"AbsNum": "46",
+"HdrNum": "P8_16",
+"Mode": "out"
+},
+    "Pin7" :{
+"Num": "7",
+"AbsNum": "65",
+"HdrNum": "P8_18",
+"Mode": "out"
+},
+    "Pin8" :{
+"Num": "8",
+"AbsNum": "27",
+"HdrNum": "P8_17",
+"Mode": "out"
+}
+}
+}

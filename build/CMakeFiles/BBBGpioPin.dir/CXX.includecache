@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/bbb/file2gpio/src/BeagleBoneBlack_GPIO/bbb_gpio.h
+unistd.h
+-
+fstream
+-
+iostream
+-
+
+/root/bbb/file2gpio/src/BeagleBoneBlack_GPIO/bbb_gpio_pin.cpp
+unistd.h
+-
+string
+-
+fstream
+-
+iostream
+-
+sys/stat.h
+-
+bbb_gpio_pin.h
+/root/bbb/file2gpio/src/BeagleBoneBlack_GPIO/bbb_gpio_pin.h
+
+/root/bbb/file2gpio/src/BeagleBoneBlack_GPIO/bbb_gpio_pin.h
+bbb_gpio.h
+/root/bbb/file2gpio/src/BeagleBoneBlack_GPIO/bbb_gpio.h
+
