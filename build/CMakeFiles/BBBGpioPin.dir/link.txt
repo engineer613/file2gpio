@@ -1,2 +1,0 @@
-/usr/bin/arm-linux-gnueabihf-ar qc libBBBGpioPin.a  CMakeFiles/BBBGpioPin.dir/src/BeagleBoneBlack_GPIO/bbb_gpio_pin.cpp.o
-/usr/bin/arm-linux-gnueabihf-ranlib libBBBGpioPin.a

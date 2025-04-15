@@ -1,6 +1,0 @@
-/root/bbb/file2gpio/build/CMakeFiles/rebuild_cache.dir
-/root/bbb/file2gpio/build/CMakeFiles/edit_cache.dir
-/root/bbb/file2gpio/build/CMakeFiles/BBBGpioPin.dir
-/root/bbb/file2gpio/build/CMakeFiles/FileReader.dir
-/root/bbb/file2gpio/build/CMakeFiles/GpioWriter.dir
-/root/bbb/file2gpio/build/CMakeFiles/File2GPIO.dir
