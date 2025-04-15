@@ -1,6 +1,0 @@
-/home/sai/bbb/file2gpio/cmake-build-debug/CMakeFiles/BBBGpioPin.dir
-/home/sai/bbb/file2gpio/cmake-build-debug/CMakeFiles/FileReader.dir
-/home/sai/bbb/file2gpio/cmake-build-debug/CMakeFiles/GpioWriter.dir
-/home/sai/bbb/file2gpio/cmake-build-debug/CMakeFiles/File2GPIO.dir
-/home/sai/bbb/file2gpio/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/sai/bbb/file2gpio/cmake-build-debug/CMakeFiles/rebuild_cache.dir
