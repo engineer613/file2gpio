@@ -15,7 +15,7 @@ This recreation involves:
 
 ### Assumptions and Modifications made
 
-While the coding challenge expected functions to be implemented which were implied to be running in the same thread, writing separate classes (with their own threads) to read from a file (FileReader), and to write the values read from file
+- While the coding challenge expected functions to read values from a file and written to GPIO pins to be implemented, writing separate classes (with their own threads) to read from a file (FileReader), and to write the values read from file
 to the GPIO pins (GPIOWriter) lends itself to a cleaner architecture making it more flexible and modular.  
 
 - Since we're emulating video game controller commands, the GPIO value files are generated along with the hold durations for each 8-bit GPIO values like this:
@@ -46,14 +46,19 @@ The process to use a pin for GPIO from the command line is as follows **(this is
 - Export the pin: `echo 66 > /sys/class/gpio/export # absolute GPIO pin number`
 - Set the mode/direction: `echo out > /sys/class/gpio/gpio66/direction #output`
 - Write to value file (1 or 0) for output: `echo 1 > /sys/class/gpio/gpio66/value` or read from value file for input pin: `cat /sys/class/gpio/gpio66/value`
+<br>
+<br>
 
 
     
 ### Simplified Block Diagram of the Software Application Architecture
 
- ![image](https://github.com/user-attachments/assets/2e70c118-3868-46e6-a9e9-d204e58e19e7)
+ ![image](https://github.com/user-attachments/assets/76134db4-9377-4dcd-8506-a27d15488711)  
 
-  
+
+<br>  
+<br>
+
 ### Instructions
 
 - Generate the file with GPIO values and hold durations:
