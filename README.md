@@ -12,6 +12,7 @@ This recreation involves:
 1. Generating a file with 8 bit GPIO values and hold durations in seconds. 
 2. Then a C++ application running on the [BeagleBone Black]([url](https://www.beagleboard.org/boards/beaglebone-black)) reads from the GPIO value file, writes those values to 8 GPIO pins (pins specified in a config json file). LEDs are connected to these GPIO pins to indicate the GPIO value on the pin at any given point of time.
 
+The BeagleBone Black used for development is still running Debian Stretch and therefore has the older `sysfs` GPIO interface.
 
 ### Assumptions and Modifications made
 
