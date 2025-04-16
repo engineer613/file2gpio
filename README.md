@@ -9,14 +9,14 @@ to read from a file with 8 bit GPIO values and write them to the first 8 GPIO pi
 
 ### Recreation of coding challenge
 This recreation involves:
-1. Generating a file with 8 bit GPIO values and hold durations in seconds first. 
-2. Then the application running on a BeagleBone Black reads from the GPIO value file, writes those values to specified GPIO pins (pins specified in a config json file), toggling LEDs connected to those pins for hold durations read from the file.
+1. Generating a file with 8 bit GPIO values and hold durations in seconds. 
+2. Then a C++ application running on the BeagleBone Black reads from the GPIO value file, writes those values to 8 GPIO pins (pins specified in a config json file). LEDs are connecte dot these GPIO pins to indicate the GPIO values at any given point of time.
 
 
 ### Assumptions and Modifications made
 
-While the coding challenge expected functions to be implemented all of which were implied to be running in the same thread, writing separate classes (with their own threads) to read from a file (FileReader), and to write the values read from file
-to the GPIO pins (GPIOWriter) is a cleaner architecture making it more flexible and modular.  
+While the coding challenge expected functions to be implemented which were implied to be running in the same thread, writing separate classes (with their own threads) to read from a file (FileReader), and to write the values read from file
+to the GPIO pins (GPIOWriter) lends itself to a cleaner architecture making it more flexible and modular.  
 
 - Since we're emulating video game controller commands, the GPIO value files are generated along with the hold durations for each 8-bit GPIO values like this:
 
@@ -28,8 +28,12 @@ to the GPIO pins (GPIOWriter) is a cleaner architecture making it more flexible 
  
 
 ### BeagleBone Black
-The BeagleBone Black has two 46 pin headers P8 and P9. It has a total of 65 GPIO pins although many of the are multiplexed with other functions and need to be explicitly set to GPIO through it's `sysfs` interface. The board used for this project runs
-Debian Stretch and has the `sysfs` interface to GPIO.
+The BeagleBone Black has two 46 pin headers P8 and P9. Between these two headers, it has a total of 65 GPIO pins although many of the are multiplexed with other functions and need to be explicitly set to GPIO. The board used for this project runs
+Debian Stretch and has the `sysfs` interface to GPIO.  
+
+The pins have an absolute GPIO number (GPIOxx) and also a header-based number (P8xx or P9xx).  
+
+**The pins used for this project are: GPIO_66, GPIO_67, GPIO_68, GPIO_69, GPIO_47, GPIO_46, GPIO_65, GPIO_27 (marked in red in the image below):**
 
 
 ![image](https://github.com/user-attachments/assets/75cb21f7-ecd7-46cb-b90f-9695121467db)
@@ -37,23 +41,15 @@ Debian Stretch and has the `sysfs` interface to GPIO.
 
 
 
-
-**The pins used for this project are: GPIO_66, GPIO_67, GPIO_68, GPIO_69, GPIO_47, GPIO_46, GPIO_65, GPIO_27 (marked in red in the picture above)**
-
-
-The pins have an absolute GPIO number (GPIOxx) and also a header-based number (P8xx or P9xx). The process to use a pin for GPIO from the command line is as follows **(this is handled by the application. The commands are just for reference)**:
+The process to use a pin for GPIO from the command line is as follows **(this is handled by the application. The stpes outlined below are just for reference)**:
 - Set the pinmux to GPIO: `config-pin P8_07 gpio # header based pin number`
 - Export the pin: `echo 66 > /sys/class/gpio/export # absolute GPIO pin number`
 - Set the mode/direction: `echo out > /sys/class/gpio/gpio66/direction #output`
 - Write to value file (1 or 0) for output: `echo 1 > /sys/class/gpio/gpio66/value` or read from value file for input pin: `cat /sys/class/gpio/gpio66/value`
-`
-
-
-To be able to use a pin for GPIO, the process is as follows
 
 
     
-### Simplified Schematic of the Software Application Architecture
+### Simplified Block Diagram of the Software Application Architecture
 
  ![image](https://github.com/user-attachments/assets/2e70c118-3868-46e6-a9e9-d204e58e19e7)
 
