@@ -2,11 +2,7 @@
 #define GPIO_APP_HPP
 
 #include "GpioFrame.hpp"
-#include "BufferPool.hpp"
-#include "ThreadSafeQueue.hpp"
-
-
-
-
+#include "PooledQueue/BufferPool.hpp"
+#include "PooledQueue/ThreadSafeQueue.hpp"
 
 #endif // GPIO_APP_HPP

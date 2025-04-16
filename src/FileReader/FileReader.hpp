@@ -9,10 +9,9 @@
 #include <thread>
 #include <bitset>
 
-#include "ThreadSafeQueue.hpp"
-#include "BufferPool.hpp"
 #include "GpioFrame.hpp"
-
+#include "BufferPool.hpp"
+#include "ThreadSafeQueue.hpp"
 
 class FileReader {
   public:

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sys/stat.h>
 
-#include "bbb_gpio_pin.h"
+#include "BBBGpioPin.h"
 
 BBBGpioPin::BBBGpioPin(const uint8_t& pin_num,
                        const std::string &abs_pin_num,

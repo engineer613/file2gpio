@@ -1,10 +1,10 @@
 #ifndef GPIO_GPIOFRAME_HPP
 #define GPIO_GPIOFRAME_HPP
 
+#include "BufferPool.hpp"
+#include "ThreadSafeQueue.hpp"
 #include <array>
 #include <cstddef>
-#include "ThreadSafeQueue.hpp"
-#include "BufferPool.hpp"
 
 // TODO: Use flat binary buffers instead
 

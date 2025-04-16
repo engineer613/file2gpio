@@ -1,7 +1,7 @@
-#include "bbb_gpio_pin.h"
+#include "BBBGpioPin.h"
 #include "GpioFrame.hpp"
-#include "ThreadSafeQueue.hpp"
 #include "BufferPool.hpp"
+#include "ThreadSafeQueue.hpp"
 #include "json.hpp"
 #include <bitset>
 

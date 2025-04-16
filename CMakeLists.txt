@@ -13,12 +13,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 find_package(Threads REQUIRED)
 
 # BBB GPIO Pin Library
-add_library(BBBGpioPin STATIC src/BeagleBoneBlack_GPIO/bbb_gpio_pin.cpp src/BeagleBoneBlack_GPIO/bbb_gpio_pin.h)
+add_library(BBBGpioPin STATIC src/BeagleBoneBlack_GPIO/BBBGpioPin.cpp src/BeagleBoneBlack_GPIO/BBBGpioPin.h)
 
 # File Reader Library
 add_library(FileReader STATIC src/FileReader/FileReader.cpp)
 target_include_directories(FileReader PUBLIC
         src/FileReader
+        src/PooledQueue
         src/Utils
 )
 
@@ -26,6 +27,7 @@ target_include_directories(FileReader PUBLIC
 add_library(GpioWriter STATIC src/GpioWriter/GpioWriter.hpp src/GpioWriter/GpioWriter.cpp)
 target_include_directories(GpioWriter PUBLIC
         src/GpioWriter
+        src/PooledQueue
         src/Utils
         src/BeagleBoneBlack_GPIO/
 )
