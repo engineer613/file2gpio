@@ -22,7 +22,7 @@ The BeagleBone Black used for development is still running Debian Stretch and th
   [8 bit GPIO value2] [32 bit Hold Duration Value2]
   ...
 
-- While the hold duration is specified in the assessment as a value in microseconds, values in seconds are used for this project, using `sleep()`  so the GPIO writes are more apparent. They can just as easily be implemented at microsecond precision using `usleep()` or even at nanosecond precision using `nanosleep()`
+- While the hold duration values are specified in the assessment in microseconds, values in seconds are used for this project, using `sleep()`  **to make the GPIO writes are more apparent**. They can just as easily be implemented at microsecond precision using `usleep()` or even at nanosecond precision using `nanosleep()`
  
 
 ### BeagleBone Black
