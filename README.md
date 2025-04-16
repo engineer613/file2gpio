@@ -1,22 +1,20 @@
 # FILE2GPIO
 
-This application is an attempt to recreate a coding challenge involving reading GPIO values from a file and writing them to the first 8 GPIO pins of a microprocessor. A BeagleBone Black running Debian Stretch was used for this recreation.
+This application is an attempt to recreate a coding assessment involving reading GPIO values from a file and writing them to the first 8 GPIO pins of a microprocessor.
 
-### Coding Challenge
+### Coding Assessment
 You work for a video game company. You would like to record video game console controller commands to a file and play them back for tool-assisted speedrun tests. To that end, implement the `gpioWriteFile()`, `gpioWriteBuffer()` and `gpioInitializeWrite()` functions
 to read from a file with 8 bit GPIO values and write them to the first 8 GPIO pins of a microprocessor, using the usleep() function call to hold the GPIO values before writing the next set of values to the pins.
 
 
-### Recreation of coding challenge
-This recreation involves:
-1. Generating a file with 8 bit GPIO values and hold durations in seconds. 
-2. Then a C++ application running on the [BeagleBone Black]([url](https://www.beagleboard.org/boards/beaglebone-black)) reads from the GPIO value file, writes those values to 8 GPIO pins (pins specified in a config json file). LEDs are connected to these GPIO pins to indicate the GPIO value on the pin at any given point of time.
+### Recreation of coding assessment
+This recreation involves a C++ application running on a [BeagleBone Black]([url](https://www.beagleboard.org/boards/beaglebone-black)) board, that reads from the file with 8 bit GPIO values and writes them to 8 GPIO pins (pins specified in a config json file). LEDs are connected to these GPIO pins to indicate the GPIO value on the pin at any given point of time.
 
 The BeagleBone Black used for development is still running Debian Stretch and therefore has the older `sysfs` GPIO interface.
 
 ### Assumptions and Modifications made
 
-- The coding challenge only expected implementation of three functions to read values from a file and write them to GPIO pins to be implemented. But since this involves an application for a working project, the object oriented approach of writing separate classes to read from a file (FileReader), and to write the values to 8 GPIO pins (GPIOWriter) lends itself to a cleaner architecture making it more flexible and modular.  
+- The coding assessment only expected implementation of three functions to read values from a file and write them to GPIO pins to be implemented. But since this involves an application for a working project, the object oriented approach of writing separate classes to read from a file (FileReader), and to write the values to 8 GPIO pins (GPIOWriter) lends itself to a cleaner architecture making it more flexible and modular.  
 
 - Since we're emulating video game controller commands, the GPIO value files are generated along with the hold durations for each 8-bit GPIO values like this:
 
@@ -24,7 +22,7 @@ The BeagleBone Black used for development is still running Debian Stretch and th
   [8 bit GPIO value2] [32 bit Hold Duration Value2]
   ...
 
-- While the hold duration is specified in the challenge as a value in microseconds, values in seconds are used for this project, using `sleep()`  so the GPIO writes are more apparent. They can just as easily be implemented at microsecond precision using `usleep()` or even at nanosecond precision using `nanosleep()`
+- While the hold duration is specified in the assessment as a value in microseconds, values in seconds are used for this project, using `sleep()`  so the GPIO writes are more apparent. They can just as easily be implemented at microsecond precision using `usleep()` or even at nanosecond precision using `nanosleep()`
  
 
 ### BeagleBone Black
