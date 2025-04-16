@@ -2,6 +2,14 @@
 
 This application is an attempt to recreate a coding assessment involving reading GPIO values from a file and writing them to the first 8 GPIO pins of a microprocessor.
 
+
+
+
+https://github.com/user-attachments/assets/c5a6472f-64b4-4a05-ad65-e1077dfc99e4
+
+
+
+
 ### Coding Assessment
 You work for a video game company. You would like to record video game console controller commands to a file and play them back for tool-assisted speedrun tests. To that end, implement the `gpioWriteFile()`, `gpioWriteBuffer()` and `gpioInitializeWrite()` functions
 to read from a file with 8 bit GPIO values and write them to the first 8 GPIO pins of a microprocessor, using the usleep() function call to hold the GPIO values before writing the next set of values to the pins.
