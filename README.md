@@ -2,7 +2,7 @@
 
 This application is an attempt to recreate a coding challenge involving reading GPIO values from a file and writing them to the first 8 GPIO pins of a microprocessor. A BeagleBone Black running Debian Stretch was used for this recreation.
 
-### Coding Challenge Statement (paraphrased)
+### Coding Challenge
 You work for a video game company. You would like to record video game console controller commands to a file and play them back for tool-assisted speedrun tests. To that end, implement the `gpioWriteFile()`, `gpioWriteBuffer()` and `gpioInitializeWrite()` functions
 to read from a file with 8 bit GPIO values and write them to the first 8 GPIO pins of a microprocessor, using the usleep() function call to hold the GPIO values before writing the next set of values to the pins.
 
@@ -16,8 +16,7 @@ The BeagleBone Black used for development is still running Debian Stretch and th
 
 ### Assumptions and Modifications made
 
-- While the coding challenge expected functions to read values from a file and written to GPIO pins to be implemented, writing separate classes (with their own threads) to read from a file (FileReader), and to write the values read from file
-to the GPIO pins (GPIOWriter) lends itself to a cleaner architecture making it more flexible and modular.  
+- The coding challenge only expected implementation of three functions to read values from a file and write them to GPIO pins to be implemented. But since this involves an application for a working project, the object oriented approach of writing separate classes to read from a file (FileReader), and to write the values to 8 GPIO pins (GPIOWriter) lends itself to a cleaner architecture making it more flexible and modular.  
 
 - Since we're emulating video game controller commands, the GPIO value files are generated along with the hold durations for each 8-bit GPIO values like this:
 
@@ -60,6 +59,20 @@ The process to use a pin for GPIO from the command line is as follows **(this is
 
 
 ### Instructions
+
+#### Compile Application
+
+- Clone the repo, cd into the `docker` directory in the repo and run:  
+    `docker build -t bbb-cross-compile .`
+- Once the docker image is built, start a container and mount the path to the repo root in it:  
+  `docker run -it -v /path/to/repo/root/dir:/home/$USER/file2gpio --workdir /home/$USER/file2gpio bbb-cross-compile:latest`
+- Once in the container, in the mounted repo directory, run:
+  ```
+  mkdir build && cd build
+  cmake ../ && make -j
+  ```
+  
+#### Run Application
 
 - Generate the file with GPIO values and hold durations:
    `./scripts/generate_gpio_frames.py <Number of frames> </path/to/file/>`
