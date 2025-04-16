@@ -3,14 +3,14 @@
 This application is an attempt to recreate a coding challenge involving reading GPIO values from a file and writing them to the first 8 GPIO pins of a microprocessor. A BeagleBone Black running Debian Stretch was used for this recreation.
 
 ### Coding Challenge Statement (paraphrased)
-You work for a video game company. You would like to record video game console controller commands to a file and play them back for tool-assisted speedrun tests. To that end, implement the gpioWriteFile(), gpioWriteBuffer() and gpioInitializeWrite() functions
+You work for a video game company. You would like to record video game console controller commands to a file and play them back for tool-assisted speedrun tests. To that end, implement the `gpioWriteFile()`, `gpioWriteBuffer()` and `gpioInitializeWrite()` functions
 to read from a file with 8 bit GPIO values and write them to the first 8 GPIO pins of a microprocessor, using the usleep() function call to hold the GPIO values before writing the next set of values to the pins.
 
 
 ### Recreation of coding challenge
 This recreation involves:
 1. Generating a file with 8 bit GPIO values and hold durations in seconds. 
-2. Then a C++ application running on the BeagleBone Black reads from the GPIO value file, writes those values to 8 GPIO pins (pins specified in a config json file). LEDs are connecte dot these GPIO pins to indicate the GPIO values at any given point of time.
+2. Then a C++ application running on the [BeagleBone Black]([url](https://www.beagleboard.org/boards/beaglebone-black)) reads from the GPIO value file, writes those values to 8 GPIO pins (pins specified in a config json file). LEDs are connected to these GPIO pins to indicate the GPIO value on the pin at any given point of time.
 
 
 ### Assumptions and Modifications made
@@ -24,7 +24,7 @@ to the GPIO pins (GPIOWriter) lends itself to a cleaner architecture making it m
   [8 bit GPIO value2] [32 bit Hold Duration Value2]
   ...
 
-- While the hold duration is specified in the challenge as a value in microseconds which can be implemented using `usleep()` on most Linux operating systems, values in seconds are used for this project, using `sleep()`  so the GPIO writes (to pins connected to LEDs) are more apparent.
+- While the hold duration is specified in the challenge as a value in microseconds, values in seconds are used for this project, using `sleep()`  so the GPIO writes are more apparent. They can just as easily be implemented at microsecond precision using `usleep()` or even at nanosecond precision using `nanosleep()`
  
 
 ### BeagleBone Black
@@ -56,8 +56,7 @@ The process to use a pin for GPIO from the command line is as follows **(this is
  ![image](https://github.com/user-attachments/assets/76134db4-9377-4dcd-8506-a27d15488711)  
 
 
-<br>  
-<br>
+
 
 ### Instructions
 
