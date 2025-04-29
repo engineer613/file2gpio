@@ -47,7 +47,7 @@ The pins have an absolute GPIO number (GPIOxx) and also a header-based number (P
 
 
 
-The process to use a pin for GPIO from the command line is as follows **(this is handled by the application. The stpes outlined below are just for reference)**:
+The process to use a pin for GPIO from the command line is as follows **(this is handled by the application. The steps outlined below are just for reference)**:
 - Set the pinmux to GPIO: `config-pin P8_07 gpio # header based pin number`
 - Export the pin: `echo 66 > /sys/class/gpio/export # absolute GPIO pin number`
 - Set the mode/direction: `echo out > /sys/class/gpio/gpio66/direction #output`
