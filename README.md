@@ -30,8 +30,13 @@ The BeagleBone Black used for development is still running Debian Stretch and th
   [8 bit GPIO value2] [32 bit Hold Duration Value2]
   ...
 
-- While the hold duration values were specified in the assessment task in microseconds, values in seconds are used for this project, using `sleep()`  **to make the GPIO writes are more apparent**. They can just as easily be implemented at microsecond precision using `usleep()` or even at nanosecond precision using `nanosleep()`
+- While the hold duration values were specified in the assessment task in microseconds, values in seconds are used for this project, using `sleep()`  **to make the GPIO writes are more apparent**. They can just as easily be implemented at microsecond precision using `usleep()` or even at nanosecond precision using `nanosleep()`  
+
  
+### Simplified Block Diagram of the Software Application Architecture
+
+ ![image](https://github.com/user-attachments/assets/76134db4-9377-4dcd-8506-a27d15488711)  
+
 
 ### BeagleBone Black
 The BeagleBone Black has two 46 pin headers P8 and P9. Between these two headers, it has a total of 65 GPIO pins although many of the are multiplexed with other functions and need to be explicitly set to GPIO. The board used for this project runs
@@ -57,12 +62,6 @@ The process to use a pin for GPIO from the command line is as follows **(this is
 
 
     
-### Simplified Block Diagram of the Software Application Architecture
-
- ![image](https://github.com/user-attachments/assets/76134db4-9377-4dcd-8506-a27d15488711)  
-
-
-
 
 ### Instructions
 
