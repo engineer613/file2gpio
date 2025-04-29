@@ -1,4 +1,4 @@
-# FILE2GPIO
+# FILE2GPIO (Programming Assessment)
 
 This application is an attempt to recreate a programming assessment task involving reading GPIO values from a file and writing them to the first 8 GPIO pins of a microprocessor.
 
