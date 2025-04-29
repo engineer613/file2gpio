@@ -16,13 +16,13 @@ to read from a file with 8 bit GPIO values and write them to the first 8 GPIO pi
 
 
 ### Recreation of Programming Assessment Task
-This recreation involves a C++ application running on a [BeagleBone Black]([url](https://www.beagleboard.org/boards/beaglebone-black)) board, that reads from the file with 8 bit GPIO values and writes them to 8 GPIO pins (pins specified in a config json file). LEDs are connected to these GPIO pins to indicate the GPIO value on the pin at any given point of time.
+This recreation involved writing a C++ application running on a [BeagleBone Black]([url](https://www.beagleboard.org/boards/beaglebone-black)) board, that reads from the file with 8 bit GPIO values and writes them to 8 GPIO pins (pins specified in a config json file). LEDs are connected to these GPIO pins to indicate the GPIO value on the pin at any given point of time.
 
 The BeagleBone Black used for development is still running Debian Stretch and therefore has the older `sysfs` GPIO interface.
 
 ### Assumptions and Modifications made
 
-- The original assessment task only expected implementation of three functions to read values from a file and write them to GPIO pins to be implemented. But since this involves an application for a working project, the object oriented approach of writing separate classes to read from a file (FileReader), and to write the values to 8 GPIO pins (GPIOWriter) lends itself to a cleaner architecture making it more flexible and modular.  
+- The original assessment task only expected implementation of three functions to read values from a file and write them to GPIO pins to be implemented. But since this involves an application for a working project with real hardware, the object oriented approach of writing separate classes to read from a file (FileReader), and to write the values to 8 GPIO pins (GPIOWriter) lends itself to a cleaner architecture making it more flexible and modular.  
 
 - Since we're emulating video game controller commands, the GPIO value files are generated along with the hold durations for each 8-bit GPIO values like this:
 
